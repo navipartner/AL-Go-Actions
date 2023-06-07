@@ -31,10 +31,14 @@ function New-BuildDimensions(
             $buildMode = $_
             
             if ($buildMode -eq 'Custom') {
-                $buildDimensions += @{
-                    project = $project
-                    buildMode = $buildMode
-                    buildDefinitions = @($projectSettings.buildDefinitions)
+                @($projectSettings.buildDefinitions) | ForEach-Object {
+                    $bdefinition = $_
+                    $buildDimensions += @{
+                        project = $project
+                        buildMode = $buildMode
+                        customModeName = $bdefinition.name
+                        buildDefinition = $bdefinition
+                    }
                 }
             } else {
                 $buildDimensions += @{
