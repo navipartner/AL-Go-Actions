@@ -522,6 +522,7 @@ function ReadSettings {
         "environments"                           = @()
         "buildModes"                             = @()
         "useCompilerFolder"                      = $false
+        "buildDefinitions"                       = @()
     }
 
     # Read settings from files and merge them into the settings object
