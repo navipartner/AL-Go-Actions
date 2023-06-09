@@ -14,7 +14,7 @@ Param(
     [Parameter(HelpMessage = "Secrets from repository in compressed Json format", Mandatory = $false)]
     [string] $secretsJson = '{"insiderSasToken":"","licenseFileUrl":"","codeSignCertificateUrl":"","codeSignCertificatePassword":"","keyVaultCertificateUrl":"","keyVaultCertificatePassword":"","keyVaultClientId":"","storageContext":"","applicationInsightsConnectionString":""}',
     [Parameter(HelpMessage = "Specifies a mode to use for the build steps", Mandatory = $false)]
-    [ValidateSet('Default', 'Translated', 'Clean')]
+    [ValidateSet('Default', 'Translated', 'Clean', 'Custom')]
     [string] $buildMode = 'Default'
 )
 
